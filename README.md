@@ -5,4 +5,5 @@ The aim of this project is to produce a Bill Splitting application that can be u
 This project is open to expansion and modification with request.
 Files will be checked and moderated when changed.
 
-boo
+Colabrators should add to the master branch when modifying the program files.
+Create a branch when adding files that you're not sure or haven't been tested.
