@@ -2,9 +2,9 @@
 //requires express
 var express = require('express');
 var app = express();
-//servers index page
-app.get('/', function (req, res){
-  res.redirect(302, '/index.html');
+//serves index page
+app.get('', function (req, res){
+  res.sendFile(302, 'index.html');
 });
 
 //adds two numbers
