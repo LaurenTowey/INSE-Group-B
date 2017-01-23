@@ -12,8 +12,14 @@ app.get('/',function(req,res){
 });
 
 //serves index page
-app.get('/',function(req,res){
-  res.sendfile('pages/index.html');
+app.get('/page2',function(req,res){
+  res.sendfile('pages/page2.html');
+  //__dirname : It will resolve to your project folder.
+});
+
+//serves index page
+app.get('/page3',function(req,res){
+  res.sendfile('pages/page3.html');
   //__dirname : It will resolve to your project folder.
 });
 
