@@ -1,20 +1,20 @@
 //basic web sever fpr handling page requests
 //requires express
-var express = require('express');
-var app = express();
+var express = require("express");
+var app     = express();
+var path    = require("path");
+
+
 //serves index page
-app.get('', function (req, res){
-  res.sendFile(302, 'index.html');
+app.get('/',function(req,res){
+  res.sendfile('pages/index.html');
+  //__dirname : It will resolve to your project folder.
 });
 
-//adds two numbers
-app.get('/subtract', function (req, res){
-    res.send(String(Number(req.query.a) - Number(req.query.b)));
-});
-
-//subtracts two numbers
-app.get('/add', function (req, res){
-    res.send(String(Number(req.query.a) + Number(req.query.b)));
+//serves index page
+app.get('/',function(req,res){
+  res.sendfile('pages/index.html');
+  //__dirname : It will resolve to your project folder.
 });
 
 //listens for server calls on port :8080
