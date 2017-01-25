@@ -1,73 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        div.container {
-            width: 100%;
-            border: 1px solid gray;
-        }
-
-        header, footer {
-            padding: 1em;
-            color: white;
-            background-color: silver;
-            clear: left;
-            text-align: center;
-        }
-
-
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-            margin-left: 15%;
-            margin-right: 15%;
-        }
-
-        .body {
-            margin-left: 15%;
-            border-left: 1px solid gray;
-            padding: 1em;
-            border-right: 1px solid gray;
-            margin-right: 15%;
-        }
-
-        .button1 {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-         .button2 {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            
-            display: inline-block;
-            font-size: 16px;
-            margin-left: 70px;
-            cursor: pointer;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
@@ -88,14 +22,19 @@
                 <input type="text" id="lname" name="lastname">
 
             </form>
-            <button href="#" class="button2">Create an account</button>
-            <button href="#" class="button1">Log in</button>
+            <button class="button2"> <a href="createAccount.html" >Create an account </a></button>
+            <button class="button1"> <a href="main.html">Login </a></button>
             
         </div>
 
         
 
-        <footer>Software Engineering Group 2B</footer>
+        <footer>
+            Software Engineering Group 2B
+            <a class="footer_content" href="http://validator.w3.org/check?uri=referer">HTML Validation</a>
+            <a class="footer_content" href="http://jigsaw.w3.org/css-validator/check/referer/">CSS Validation</a>
+
+        </footer>
 
     </div>
 
