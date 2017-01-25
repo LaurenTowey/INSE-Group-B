@@ -1,0 +1,235 @@
+import mysql.connector
+#import error code
+from mysql.connector import errorcode
+#establish connection
+
+def checkConnection():
+    global cnn
+    try:
+        #connection name
+        cnn = mysql.connector.connect(
+            #DB and user details
+            user= 'root',
+            password= 'root',
+            host= 'localhost',
+            database= 'SmartSplit')
+        print ("Connection established")
+    #output error if username or password is wrong
+    except mysql.connector.Error as e:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with the username or Password")
+    #output error if database does not exist
+        elif e.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database Does not exist")
+        else:
+            print (e)
+
+
+def CreateAccount():
+
+    checkConnection()
+    cursor = cnn.cursor()
+
+    #query to add an user to the database
+    addAccount = ("INSERT INTO Account (account_Name, account_Password, account_Email) VALUES (%s, %s, %s)")
+
+    #get get values for the account
+    account_Name = input("Please enter the name of the account you wish to add: ")
+    account_Password = input("Please enter the password for the account you wish to add: ")
+    account_Email = input("Please enter the email for the account: ")
+    accountValues = (account_Name, account_Password, account_Email)
+
+    #execute the query(connection / execute)
+    cursor.execute(addAccount, accountValues)
+
+    #make changes
+    cnn.commit()
+    cursor.close()
+    cnn.close()
+
+
+def login():
+
+    checkConnection()
+    userName = input("Please enter your username: ")
+    userPassword = input ("Please enter your password: ")
+
+    cursor = cnn.cursor()
+    #query to find user email
+    emailCheck = "select account_Name from account where account_Name = '" + userName  + "'"
+    #query to check if the password matches
+    passwordCheck = "select account_Password from account where account_Password = '" + userPassword + "'"
+    cursor.execute(emailCheck)
+    #assign results to a variable
+    results = cursor.fetchall()
+    #check if results is empty
+    if not results:
+        print ("user does not exist")
+
+    else:
+        print("user exists")
+        cursor.execute(passwordCheck)
+        results = cursor.fetchall()
+        if not results:
+            print ("password is wrong")
+            print ("Failed to log in")
+        else:
+            print("password is right")
+            print("succesfully logged in")
+login()
+
+def removeUser():
+    checkConnection()
+    cursor = cnn.cursor()
+
+    account_Name = input("Please enter your account name you wish to delete: ")
+
+    checkAccount = ("select account_Name from account where account_Name = '" + account_Name + "'")
+    removeAccount = ("DELETE FROM account WHERE account_Name = '" + account_Name + "'")
+
+    cursor.execute(checkAccount)
+    #assign results to a variable
+    results = cursor.fetchall()
+    #check if results is empty
+    if not results:
+            print ("user does not exist")
+
+    else:
+            print("user exists")
+            cursor.execute(removeAccount)
+            cnn.commit()
+            cursor.close()
+            cnn.close()
+
+def addFriend():
+
+    checkConnection()
+    cursor = cnn.cursor()
+
+    #query to add an user to the database
+    addFriend = ("INSERT INTO Friend (friend_FirstName, friend_LastName, friend_Email, friend_PhoneNumber, friend_account_ID) VALUES (%s, %s, %s, %s, %s)")
+
+    #get get values for the account
+    friend_FirstName = input("Please enter your friend's first name: ")
+    friend_LastName = input("Please enter your friend's last name: ")
+    friend_Email = input("Please enter the email for the account: ")
+    friend_PhoneNumber = input("Please enter your friend's phone number of an account: ")
+    friend_account_ID = input("Please enter your account ID")
+    accountValues = (friend_FirstName, friend_LastName, friend_Email, friend_PhoneNumber, friend_account_ID)
+
+    #execute the query(connection / execute)
+    cursor.execute(addFriend, accountValues)
+
+    #make changes
+    cnn.commit()
+    cursor.close()
+    cnn.close()
+
+def addGroup():
+
+    checkConnection()
+    cursor = cnn.cursor()
+
+
+    #query to add an user to the database
+
+
+    #get get values for the account
+    group_Name = input("Please enter your friend's first name: ")
+    group_Friend_ID = input("Please enter your friend's Email: ")
+    group_Account_ID = input("Please enter your account ID")
+    friendemail = ("select friend_ID from friend where friend_Email = '" + group_Friend_ID + "'")
+    #execute the query(connection / execute)
+
+
+    cursor.execute(friendemail)
+    # assign results to a variable
+    results = cursor.fetchone()
+    # check if results is empty
+    if not results:
+        print("user does not exist")
+
+    else:
+        IDStore = results[0]
+
+    addgroup = ("INSERT INTO groups (group_Name, group_Friend_ID, group_Account_ID) VALUES (%s, %s, %s)")
+    var = (group_Name, IDStore, group_Account_ID)
+    cursor.execute(addgroup, var)
+    cnn.commit()
+    cursor.close()
+    cnn.close()
+
+def Addbill():
+
+    checkConnection()
+    cursor = cnn.cursor()
+
+    #query to add an user to the database
+    addbill = ("INSERT INTO bill (bill_Name, bill_Amount, bill_Currency, bill_Type, bill_SplitRatio, bill_DueDate, bill_Account_ID ) VALUES (%s, %s, %s, %s, %s, %s, %s)")
+
+    #get get values for the account
+    bill_Name = input("Please enter the Name for your bill: ")
+    bill_Amount = input("Please enter the amount of this bill: ")
+    bill_Currency = input("Please enter currency for this bill: ")
+    bill_Type = input("Please enter the type of the bill: ")
+    bill_SplitRatio = input("Please enter the split ratio of bill: ")
+    bill_DueDate = input("Please enter the due Date of this bill: ")
+    bill_Account_ID = input("Please enter your ID: ")
+    accountValues = (bill_Name, bill_Amount, bill_Currency, bill_Type, bill_SplitRatio, bill_DueDate, bill_Account_ID )
+
+    #execute the query(connection / execute)
+    cursor.execute(addbill, accountValues)
+
+    #make changes
+    cnn.commit()
+    cursor.close()
+    cnn.close()
+
+
+
+def removeBill():
+    checkConnection()
+    cursor = cnn.cursor()
+
+    bill_Name = input("Please enter your Bill name you wish to delete: ")
+
+    checkname = ("select bill_Name from Bill where bill_Name = '" + bill_Name + "'")
+    removeAccount = ("DELETE FROM bill WHERE bill_Name = '" + bill_Name + "'")
+
+    cursor.execute(checkname)
+    # assign results to a variable
+    results = cursor.fetchall()
+    # check if results is empty
+    if not results:
+        print("bill doesn't exist")
+
+    else:
+        print("Bill exist")
+        cursor.execute(removeAccount)
+        cnn.commit()
+        cursor.close()
+        cnn.close()
+
+   #not finished
+def alterBill():
+    checkConnection()
+    cursor = cnn.cursor()
+    bill_Name = input("Please enter your Bill name you wish to alter: ")
+    bill_Name2 = input ("Please eneter the new name for this shit")
+    checkname = ("select bill_Name from Bill where bill_Name = '" + bill_Name + "'")
+    removeAccount = ("UPDATE bill SET bill_Name = '" + bill_Name2 + "' WHERE bill_Name = '" + bill_Name + "'")
+
+    cursor.execute(checkname)
+    # assign results to a variable
+    results = cursor.fetchall()
+    # check if results is empty
+    if not results:
+        print("bill doesn't exist")
+
+    else:
+        print("Bill exist")
+        cursor.execute(removeAccount)
+        cnn.commit()
+        cursor.close()
+        cnn.close()
+
