@@ -8,19 +8,21 @@ var path    = require("path");
 //serves index page
 app.get('/',function(req,res){
   res.sendfile('pages/index.html');
-  //__dirname : It will resolve to your project folder.
 });
 
 //serves index page
-app.get('/page2',function(req,res){
-  res.sendfile('pages/page2.html');
-  //__dirname : It will resolve to your project folder.
+app.get('/acceptPage',function(req,res){
+  res.sendfile('pages/acceptPage.html');
 });
 
 //serves index page
-app.get('/page3',function(req,res){
-  res.sendfile('pages/page3.html');
-  //__dirname : It will resolve to your project folder.
+app.get('/createAccount',function(req,res){
+  res.sendfile('pages/createAccount.html');
+});
+
+//serves index page
+app.get('/stylesheet',function(req,res){
+  res.sendfile('pages/index.html');
 });
 
 //listens for server calls on port :8080
