@@ -21,7 +21,7 @@ app.get('/createAccount',function(req,res){
 });
 
 //serves index page
-app.get('/stylesheet',function(req,res){
+app.get('/stylesheet.css',function(req,res){
   res.sendfile('pages/index.html');
 });
 
