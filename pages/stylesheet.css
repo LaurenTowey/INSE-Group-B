@@ -1,0 +1,135 @@
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: silver;
+    clear: left;
+    text-align: center;
+}
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.body {
+    margin-left: 15%;
+    border-left: 1px solid gray;
+    padding: 1em;
+    border-right: 1px solid gray;
+    margin-right: 15%;
+}
+
+.button2 {
+    background-color: #808080;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #808080;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+}
+
+.mainUL {
+    list-style-type: none;
+    margin-left: 40%;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+    /* Change the link color on hover */
+    li a:hover {
+        background-color: #555;
+        color: white;
+    }
+
+    .scroll {
+     background-color: #eee;
+    width: 160px;
+    height: 200px;
+    border: 1px dotted black;
+    overflow: scroll;
+    margin-left: 40%;
+     overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+    .scroll2 {
+     background-color: #eee;
+    width: 30%;
+    height: 30%;
+    border: 1px dotted black;
+    overflow: scroll;
+    margin-left: 40%;
+     overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+    .button3 {
+    background-color: #4CAF50;
+    
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+   
+    margin-right: 100px;
+    
+}
+
+.subtitle {
+    text-align:center;
+    text-decoration: underline;
+    font-size:160%;
+
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
