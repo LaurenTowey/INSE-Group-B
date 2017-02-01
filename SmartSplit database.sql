@@ -25,9 +25,7 @@ CREATE TABLE Friend(
     group_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     group_Name VARCHAR(45) NOT NULL,
     group_Friend_ID INT NOT NULL,
-    CONSTRAINT FK_group_Friend_ID FOREIGN KEY(group_Friend_ID) REFERENCES Friend(friend_ID),
-    group_Account_ID INT NULL,
-    CONSTRAINT FK_group_Account_ID FOREIGN KEY(group_Account_ID) REFERENCES Account(Account_ID)
+    CONSTRAINT FK_group_Friend_ID FOREIGN KEY(group_Friend_ID) REFERENCES Friend(friend_ID)
   );
 
 
