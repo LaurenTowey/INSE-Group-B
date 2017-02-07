@@ -6,10 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "DanS",
+  "author": "up759661",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "mysql": "2.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dansnipe/INSE-Group-B.git"
   }
 }

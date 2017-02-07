@@ -1,0 +1,14 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "password": "root",
+    "database": "SmartSplit",
+  "table": "Account",
+  "table": "Bill",
+  "table": "Friend",
+  "table": "FriendhasBill",
+  "table": "FriendhasGroup",
+  "table": "Groups"
+  }
+}
