@@ -9,10 +9,16 @@ var utilities = require("./utilities.js");
 app.get('/',function(req,res){
   res.redirect('/login');
 });
+app.get('/signin',function(req,res){
+  res.redirect('/');
+});
 
 //serves login page
 app.get('/acceptPage',function(req,res){
-  res.sendfile('pages/signin.html');
+  res.sendfile('pages/acceptPage.html');
+});
+app.get('/main',function(req,res){
+  res.sendfile('pages/main.html');
 });
 app.get('/login',function(req,res){
   res.sendfile('pages/signin.html');
@@ -35,14 +41,8 @@ app.get('/index',function(req,res){
 app.get('/invite',function(req,res){
   res.sendfile('pages/invite.html');
 });
-app.get('/main',function(req,res){
-  res.sendfile('pages/main.html');
-});
 app.get('/recovery',function(req,res){
   res.sendfile('pages/recovery.html');
-});
-app.get('/signin',function(req,res){
-  res.sendfile('pages/signin.html');
 });
 app.get('/smartSplit',function(req,res){
   res.sendfile('pages/smartSplit.html');
