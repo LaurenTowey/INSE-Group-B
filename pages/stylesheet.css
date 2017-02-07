@@ -22,6 +22,16 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: inline;
+}
+
 
 .form {
     border-radius: 5px;
@@ -65,20 +75,8 @@ input[type=text], select {
     cursor: pointer;
 }
 
-.mainUL {
-    list-style-type: none;
-    margin-left: 40%;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-}
 
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
+
 
     /* Change the link color on hover */
     li a:hover {
@@ -107,14 +105,14 @@ li a {
 
     .button3 {
     background-color: #4CAF50;
-    
+
     color: white;
     padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
-   
+
     margin-right: 100px;
-    
+
 }
 
 .subtitle {
