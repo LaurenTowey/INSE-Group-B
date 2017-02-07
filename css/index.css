@@ -1,15 +1,86 @@
-
-        div.container {
-            width: 100%;
-            border: 1px solid gray;
+        h1 {
+          font-family:tahoma;
+          font-size: 40px;
         }
+ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+
+}
+
+ul>li{
+  display:inline;
+  text-align: center;
+}
+
+#block{
+  display:block;
+  text-align:left;
+}
+
+
+nav {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #576c71;
+  border-radius: 15px;
+  background: #4CAF50;
+  color: #4CAF50;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+nav ul {
+width: 500px;
+height: 40px;
+margin: 0 auto;
+}
+
+nav li {
+display: inline-block;
+float: center;
+background:white;
+border-radius: 15px;
+}
+
+nav li a {
+box-sizing:border-box;
+padding-left: 10px;
+padding-right:10px;
+}
+
+nav a:hover, nav a:active{
+background-color: #4a300f;
+color: #FFb14F;
+border-radius: 15px;
+}
+
 
         header, footer {
+          border-radius:25px;
             padding: 1em;
             color: white;
-            background-color: silver;
+            background-color: #4CAF50;
             clear: left;
             text-align: center;
+            border-bottom: 2px solid #576c71;
+        }
+
+header{
+  margin-bottom:1%;
+}
+
+button{
+  border-radius: 25px;
+}
+        footer{
+          margin-top: 1%;
         }
 
 
@@ -31,12 +102,13 @@
             margin-right: 15%;
         }
 
-        .body {
+        body {
             margin-left: 15%;
-            border-left: 1px solid gray;
             padding: 1em;
-            border-right: 1px solid gray;
             margin-right: 15%;
+            font-family: Tahoma;
+            background-color: grey;
+            border-radius: 5px;
         }
 
         .button2 {
@@ -50,6 +122,8 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+            border-radius:25px;
+            border-bottom: 2px solid #576c71;
         }
 
          .button1 {
@@ -57,12 +131,16 @@
             border: none;
             color: white;
             padding: 15px 32px;
-            
+            border-radius:25px;
             display: inline-block;
             font-size: 16px;
             float: right;
             margin-right: 100px;
             cursor: pointer;
+            border-bottom: 2px solid #576c71;
         }
 
-  
+        .subtitle {
+          font-size: 20px;
+          text-decoration: underline;
+        }

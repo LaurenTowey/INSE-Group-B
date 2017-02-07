@@ -1,8 +1,13 @@
+h1 {
+  font-family: Tahoma;
+}
+
 
 div.container {
     width: 100%;
     border: 1px solid gray;
 }
+
 
 header, footer {
     padding: 1em;
@@ -22,6 +27,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -47,6 +53,7 @@ li a {
     padding: 1em;
     border-right: 1px solid gray;
     margin-right: 15%;
+    font-family: Tahoma;
 }
 
 .button2 {
@@ -94,6 +101,7 @@ li a {
      overflow-x: hidden; /* Hide horizontal scrollbar */
 }
     .scroll2 {
+      display: inline;
      background-color: #eee;
     width: 30%;
     height: 30%;
